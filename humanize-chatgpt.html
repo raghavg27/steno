@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>How to make ChatGPT sound human, and where to put the instructions</title>
+<meta name="description" content="Custom instructions, Claude styles, Gemini saved info and Cursor rules: where each tool stores standing instructions, and what to write in them so every reply comes out human. Includes a free block you can paste now." />
+<meta name="theme-color" content="#0B0B0C" />
+<link rel="canonical" href="https://steno-ai.vercel.app/humanize-chatgpt" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Raghav Gupta" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Steno" />
+<meta property="og:url" content="https://steno-ai.vercel.app/humanize-chatgpt" />
+<meta property="og:title" content="How to make ChatGPT sound human, and where to put the instructions" />
+<meta property="og:description" content="Where each tool stores standing instructions, and what to write in them. Includes a free block you can paste now." />
+<meta property="og:image" content="https://steno-ai.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to make ChatGPT sound human, and where to put the instructions" />
+<meta name="twitter:description" content="Where each tool stores standing instructions, and what to write in them. Includes a free block you can paste now." />
+<meta name="twitter:image" content="https://steno-ai.vercel.app/og.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/article.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://steno-ai.vercel.app/humanize-chatgpt#article",
+      "headline": "How to make ChatGPT sound human, and where to put the instructions",
+      "description": "Custom instructions, Claude styles, Gemini saved info and Cursor rules: where each tool stores standing instructions, and what to write in them so every reply comes out human.",
+      "image": "https://steno-ai.vercel.app/og.png",
+      "datePublished": "2026-08-06",
+      "dateModified": "2026-08-06",
+      "inLanguage": "en",
+      "author": { "@type": "Person", "name": "Raghav Gupta", "url": "https://steno-ai.vercel.app/" },
+      "publisher": { "@type": "Organization", "name": "Steno", "logo": { "@type": "ImageObject", "url": "https://steno-ai.vercel.app/icon-512.png" } },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://steno-ai.vercel.app/humanize-chatgpt" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Steno", "item": "https://steno-ai.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "How to make ChatGPT sound human", "item": "https://steno-ai.vercel.app/humanize-chatgpt" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where do I put standing instructions in ChatGPT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Settings, then Personalisation, then Custom instructions. The second field, which asks how ChatGPT should respond, is the one that carries style rules. It applies to every new chat until you change it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does asking ChatGPT to write like a human work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. Write like a human is not a rule the model can follow, because it does not know which of its habits read as machine written. Naming the specific patterns to avoid works. Naming the tone does not." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I ask for no em dashes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can, but it is no longer the useful instruction it was. Analysis published in 2026 found em dash frequency is a weak signal, and that verbosity and flat sentence rhythm separate machine prose from human prose more reliably." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="/">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M7.5 25.5c0-10.5 5.4-19 11.2-19 3.1 0 4.8 2 4.8 4.7 0 6.2-7.6 9.6-12.3 10.4" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="25.6" cy="25.4" r="2.5" fill="currentColor"/>
+      </svg>
+      Steno
+    </a>
+    <a href="/#buy" class="btn btn-sm">Get it, ₹99</a>
+  </div>
+</header>
+
+<main>
+<article class="wrap">
+
+  <p class="crumb"><a href="/">Steno</a> / ChatGPT</p>
+
+  <h1>How to make ChatGPT sound human</h1>
+
+  <p class="standfirst">Two problems, and most people only solve the second. Knowing what to write is one. Knowing where to put it so you never write it again is the other.</p>
+
+  <p class="meta">Updated 6 August 2026 &middot; About seven minutes</p>
+
+  <h2>Why "write like a human" does nothing</h2>
+
+  <p>The instruction fails because the model has no idea which of its own habits read as machine written. It has been trained on human text, so from the inside, everything it produces is already human writing. Ask for a human tone and you get the same output with a friendlier opener.</p>
+
+  <p>What does work is naming the pattern. <em>Do not open with a sentence about the modern world</em> is actionable. <em>Sound natural</em> is not. Every instruction below is specific for that reason.</p>
+
+  <h2>Where the instruction goes, tool by tool</h2>
+
+  <h3>ChatGPT</h3>
+
+  <p>Settings, then Personalisation, then Custom instructions. There are two boxes. The first is about you, the second is about how ChatGPT should respond. Style rules go in the second box. Whatever you put there applies to every new conversation until you edit it, which is the entire point: you write it once instead of at the top of every chat.</p>
+
+  <p>The box has a character limit, so terse rules beat explanations. Write <em>no em dashes, no emoji, no bold on the first words of bullets</em> rather than a paragraph about why.</p>
+
+  <h3>Claude</h3>
+
+  <p>Two options, and they behave differently. Projects carry instructions for everything inside that project, which suits a body of work with a consistent voice. Styles apply across conversations and are the closer match to ChatGPT custom instructions. If you write in more than one register, make a style per register rather than one compromise.</p>
+
+  <h3>Gemini</h3>
+
+  <p>Saved info holds standing preferences. Gems are the equivalent of a project, useful when a particular kind of writing needs its own rules.</p>
+
+  <h3>Cursor, Copilot and coding agents</h3>
+
+  <p>These read a rules file from the repository. The style rules matter more than people expect, because the prose these tools generate ends up in commit messages, pull request descriptions, changelogs and documentation, and that prose is what your colleagues actually read.</p>
+
+  <h2>A block you can paste right now</h2>
+
+  <p>This is a short version. It is genuinely useful on its own and it is not the full product, which is longer and handles the cases where the rules conflict with each other.</p>
+
+  <pre><code>Write as a person would. Never state a fact, number or citation
+you cannot support.
+
+Do not use: inflated significance (stands as a testament,
+pivotal, evolving landscape), participial padding (highlighting,
+ensuring, fostering, showcasing), promotional adjectives
+(nestled, boasts, vibrant, renowned), vague attribution
+(experts argue, studies suggest), negative parallelism (not
+only X but Y), signposting (let us dive in, here is what you
+need to know), or filler (in order to, it is worth noting that).
+
+Use is and has. Do not write serves as, represents or features
+when is or has will do.
+
+Do not force ideas into groups of three. Two is fine.
+
+Vary sentence and paragraph length. Uniform rhythm is the
+loudest tell.
+
+No emoji. No em dashes. No boldface applied by rule.
+
+Bullets only for real lists, never for prose.
+
+Have a view where the genre allows it.</code></pre>
+
+  <p>Paste it into the second custom instructions box, start a new chat, and ask for something you have asked for before. The difference shows up in the first paragraph.</p>
+
+  <h2>What to expect, honestly</h2>
+
+  <p>Three things are worth knowing before you judge the result.</p>
+
+  <p>The rules decay over a long conversation. Instructions sit at the top of the context and compete with everything said since. After twenty exchanges the openers start creeping back. A short reminder mid conversation fixes it.</p>
+
+  <p>The model overcorrects at first. Told to avoid ornament, it sometimes produces prose that is clipped to the point of rudeness. Adding one line about keeping a warm tone usually settles it.</p>
+
+  <p>And instructions cannot repair text that already exists. Anything you wrote before pasting them stays exactly as it was. That is a different job, an editing pass over finished text, and it needs its own set of rules: rewrite the prose, keep every claim, invent nothing.</p>
+
+  <h2>The words are not the problem</h2>
+
+  <p>Every list of banned phrases goes stale, because the words rotate and the habits do not. A model that cannot say <em>delve</em> says <em>explore</em> in exactly the same sentence shape. The shape is the tell.</p>
+
+  <p>Which is why the useful instructions are about structure: sentence length variation, no forced triplets, no participial clause bolted onto the end, no conclusion stated on the reader's behalf. <a href="/ai-writing-tells">The full list of twelve habits is here</a>, with a before and after for each.</p>
+
+  <div class="cta">
+    <h3>The full instruction layer</h3>
+    <p>Steno ships four versions of this: one sized for ChatGPT custom instructions, one for Claude projects and styles, a short one for tight character limits, and a per message version to drop into any chat. It comes with a skill file for the editing pass on text you already have. ₹99, once.</p>
+    <a href="/#buy" class="btn">Get Steno for ₹99 →</a>
+  </div>
+
+  <div class="related">
+    <h3>Related</h3>
+    <ul>
+      <li><a href="/ai-writing-tells">Twelve tells that give away AI writing</a></li>
+      <li><a href="/em-dash-ai-writing">The em dash is not the tell any more</a></li>
+    </ul>
+  </div>
+
+</article>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>Steno &copy; <span id="yr">2026</span></div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="/">Home</a>
+      <a href="/ai-writing-tells">The tells</a>
+      <a href="/em-dash-ai-writing">Em dash</a>
+      <a href="/#buy">Buy</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

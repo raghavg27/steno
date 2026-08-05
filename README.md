@@ -6,7 +6,7 @@ Steno is a writing standard for AI output. It is a paste-once instruction layer 
 
 One time payment, ₹99. No app, no login, no subscription.
 
-<!-- Live site:  -->
+Live site: **[steno-ai.vercel.app](https://steno-ai.vercel.app)**
 
 ---
 
@@ -46,13 +46,15 @@ The Steno landing page. A single static page, no build step, no dependencies, no
 - Custom type pairing, ambient gradient and film grain treatment, and a live before and after demo the visitor can toggle
 - Original logo mark in SVG, rendered out to a full favicon and app icon set
 - Open Graph share card generated from source HTML rather than hand edited in an image tool
-- Deployed on Vercel with clean URLs and security headers
+- Three long form guide pages that double as the SEO surface, written in the standard the product sells
+- Structured data for Product, FAQ, Article and breadcrumbs, plus a sitemap and crawl rules that admit assistant bots
+- Deployed on Vercel with clean URLs, cache policy and security headers
 
 Built end to end by one person: product, copy, brand, design and front end.
 
 ## Buy
 
-Payment runs through Buy Me a Coffee. Card and UPI both work. Send the receipt across and the files come back the same day.
+Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock on the page as soon as the payment clears, and a copy goes to your email.
 
 Launch price ₹99, down from ₹499. If it does not work for you, write in and say so. At ₹99 there is no argument worth having about a refund.
 

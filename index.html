@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Steno: stop sounding like a language model</title>
-<meta name="description" content="A paste-in instruction layer plus a skills file that makes everything your AI writes read like a person wrote it. One time, Rs 99." />
+<title>Steno: make AI writing sound human, not like ChatGPT</title>
+<meta name="description" content="Steno is a paste-once instruction layer plus an editing skill that strips the patterns readers recognise as ChatGPT writing. Works with ChatGPT, Claude and Gemini. One time, ₹99." />
 <meta name="theme-color" content="#0B0B0C" />
+<link rel="canonical" href="https://steno-ai.vercel.app/" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="author" content="Raghav Gupta" />
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.png" sizes="32x32" />
@@ -13,20 +16,110 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Steno: stop sounding like a language model" />
-<meta property="og:description" content="Paste one block of instructions. Every reply after that reads human. Rs 99, one time." />
-<meta property="og:image" content="/og.png" />
+<meta property="og:site_name" content="Steno" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:url" content="https://steno-ai.vercel.app/" />
+<meta property="og:title" content="Steno: make AI writing sound human, not like ChatGPT" />
+<meta property="og:description" content="Paste one block of instructions. Every reply after that reads human. ₹99, one time." />
+<meta property="og:image" content="https://steno-ai.vercel.app/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Steno. Stop sounding like a language model. Rs 99, one time." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Steno: stop sounding like a language model" />
-<meta name="twitter:description" content="Paste one block of instructions. Every reply after that reads human. Rs 99, one time." />
-<meta name="twitter:image" content="/og.png" />
+<meta name="twitter:title" content="Steno: make AI writing sound human, not like ChatGPT" />
+<meta name="twitter:description" content="Paste one block of instructions. Every reply after that reads human. ₹99, one time." />
+<meta name="twitter:image" content="https://steno-ai.vercel.app/og.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://steno-ai.vercel.app/#website",
+      "url": "https://steno-ai.vercel.app/",
+      "name": "Steno",
+      "description": "A writing standard that stops AI output reading like a language model.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://steno-ai.vercel.app/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://steno-ai.vercel.app/#person",
+      "name": "Raghav Gupta",
+      "email": "raghavg2705@gmail.com",
+      "url": "https://steno-ai.vercel.app/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://steno-ai.vercel.app/#webpage",
+      "url": "https://steno-ai.vercel.app/",
+      "name": "Steno: make AI writing sound human, not like ChatGPT",
+      "isPartOf": { "@id": "https://steno-ai.vercel.app/#website" },
+      "primaryImageOfPage": "https://steno-ai.vercel.app/og.png",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://steno-ai.vercel.app/#product",
+      "name": "Steno",
+      "description": "An instruction layer and an editing skill file that remove the patterns readers recognise as AI written prose. Covers inflated significance, participial padding, promotional tone, vague attribution, rule of three, uniform rhythm and cosmetic tells.",
+      "image": "https://steno-ai.vercel.app/og.png",
+      "brand": { "@type": "Brand", "name": "Steno" },
+      "category": "Writing software",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://steno-ai.vercel.app/#buy",
+        "price": "99",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@id": "https://steno-ai.vercel.app/#person" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://steno-ai.vercel.app/#faq",
+      "isPartOf": { "@id": "https://steno-ai.vercel.app/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will this beat AI detectors?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No promise is made about any detector, because detector scores move and none of them publish their method. What Steno does is remove the patterns that make a human reader suspicious. That is the part you can actually control." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tools does it work with?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Anything that accepts a system prompt or custom instructions. ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. The skills file follows the Claude Skills format and also works as a plain prompt." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it change what my text says?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The rule is that no claim gets dropped and nothing new gets invented. Text usually gets shorter because the ornament goes, not because information does." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my writing going to sound flat now?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ornament and voice are different things. Steno removes the patterns a model reaches for when it has nothing to say. Your actual argument, jokes and opinions stay." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get the files after paying?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Straight away. Buy Me a Coffee unlocks the files on the page as soon as the payment goes through, and sends a copy to your email as well. Nothing to wait for and nobody to chase." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if it does not work for me?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Write in and say so. At ₹99 there is no argument worth having about a refund." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -356,6 +449,7 @@
     <nav class="nav-links">
       <a href="#proof" class="hide-sm">Proof</a>
       <a href="#inside" class="hide-sm">What you get</a>
+      <a href="#guides" class="hide-sm">Guides</a>
       <a href="#faq" class="hide-sm">FAQ</a>
       <a href="#buy" class="btn" style="padding:9px 18px;font-size:14px;">Get it, ₹99</a>
     </nav>
@@ -490,8 +584,8 @@
       </div>
       <div class="step">
         <span>2</span>
-        <h4>Email the receipt</h4>
-        <p>Send it across and the files come back to you the same day.</p>
+        <h4>Get the files</h4>
+        <p>They unlock on the page the moment you pay, and land in your inbox too.</p>
       </div>
       <div class="step">
         <span>3</span>
@@ -551,7 +645,7 @@
           </ul>
 
           <button class="btn btn-lg" onclick="buy()">Pay ₹99 and get the files →</button>
-          <small>Payment runs through Buy Me a Coffee. You will see the amount converted to their settlement currency at checkout.</small>
+          <small>Payment runs through Buy Me a Coffee and the files unlock immediately after. You will see the amount converted to their settlement currency at checkout.</small>
         </div>
       </div>
     </div>
@@ -583,12 +677,39 @@
       </details>
       <details>
         <summary>How do I get the files after paying?</summary>
-        <p>Email the Buy Me a Coffee receipt and the files come back the same day. The buy button walks you through it and pre-fills the email for you.</p>
+        <p>Straight away. Buy Me a Coffee unlocks the files on the page as soon as the payment goes through, and sends a copy to your email as well. Nothing to wait for and nobody to chase.</p>
       </details>
       <details>
         <summary>What if it does not work for me?</summary>
         <p>Write in and say so. At ₹99 there is no argument worth having about a refund.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section id="guides">
+  <div class="wrap reveal">
+    <span class="eyebrow">Free reading</span>
+    <h2>Read the thinking before you pay for it.</h2>
+    <p class="lede">Three guides, no email required. If they are useful on their own, the files are the same idea with the work already done.</p>
+
+    <div class="steps" style="counter-reset:none;">
+      <div class="step">
+        <span>01</span>
+        <h4><a href="/ai-writing-tells" style="text-decoration:none;">Twelve tells that give away AI writing</a></h4>
+        <p>The full list, each one with the fix. This is the reference the product is built on.</p>
+      </div>
+      <div class="step">
+        <span>02</span>
+        <h4><a href="/humanize-chatgpt" style="text-decoration:none;">How to make ChatGPT sound human</a></h4>
+        <p>Where to put instructions in ChatGPT and Claude so they apply to every reply, and what to write in them.</p>
+      </div>
+      <div class="step">
+        <span>03</span>
+        <h4><a href="/em-dash-ai-writing" style="text-decoration:none;">The em dash is not the tell any more</a></h4>
+        <p>Why the most repeated giveaway stopped working in 2026, and what replaced it.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -607,7 +728,10 @@
 <footer>
   <div class="wrap foot">
     <div>Steno &copy; <span id="yr"></span></div>
-    <div style="display:flex;gap:20px;">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="/ai-writing-tells">The tells</a>
+      <a href="/humanize-chatgpt">ChatGPT guide</a>
+      <a href="/em-dash-ai-writing">Em dash</a>
       <a href="#" id="mailLink">Contact</a>
       <a href="#faq">FAQ</a>
       <a href="#buy">Buy</a>
@@ -619,7 +743,7 @@
 <div class="overlay" id="ov" onclick="if(event.target===this)closeM()">
   <div class="modal" role="dialog" aria-modal="true">
     <h3>One step and it is yours</h3>
-    <p>Buy Me a Coffee handles the payment. Files come by email.</p>
+    <p>Buy Me a Coffee handles the payment. The files unlock on that page the second it clears, and a copy goes to your email.</p>
     <p><b>Pay ₹99</b> on the page that just opened in a new tab. If it did not open, <a href="#" id="bmcFallback" target="_blank" rel="noopener" style="color:var(--acid);">use this link</a>.</p>
     <button class="close" onclick="closeM()">Close</button>
   </div>
@@ -630,7 +754,7 @@
    REPLACE THESE TWO LINES BEFORE DEPLOYING
    ============================================================ */
 const BMC_URL = "https://buymeacoffee.com/raghavg27/e/563450";   // <- your Buy Me a Coffee page
-const EMAIL   = "multirags@gmail.com";                       // <- where buyers send the receipt
+const EMAIL   = "raghavg2705@gmail.com";                       // <- contact address in the footer
 /* ============================================================ */
 
 document.getElementById("mailLink").href = "mailto:" + EMAIL;
