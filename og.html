@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Source file for og.png. Render with:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+       --screenshot=og.png --window-size=1200,630 --hide-scrollbars \
+       --virtual-time-budget=4000 --default-background-color=00000000 file://$PWD/og.html
+-->
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  body{
+    background:#0B0B0C;
+    font-family:Inter,system-ui,sans-serif;
+    color:#EDEAE4;
+    position:relative;
+  }
+  .glow{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(560px 380px at 88% -6%, rgba(212,255,79,.16), transparent 68%),
+      radial-gradient(520px 400px at 4% 104%, rgba(120,140,255,.10), transparent 70%);
+  }
+  .rule{
+    position:absolute;left:0;right:0;top:0;height:5px;
+    background:linear-gradient(90deg,#D4FF4F,rgba(212,255,79,.15) 42%,transparent 72%);
+  }
+  .pad{position:relative;height:100%;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between;}
+
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand svg{width:34px;height:34px;color:#D4FF4F;display:block;
+    filter:drop-shadow(0 0 18px rgba(212,255,79,.45));}
+  .brand b{font-size:25px;font-weight:600;letter-spacing:-.025em;}
+  .brand span{
+    margin-left:8px;font-family:"JetBrains Mono",monospace;font-size:12px;
+    letter-spacing:.2em;color:#8D8B84;text-transform:uppercase;
+    border-left:1px solid rgba(255,255,255,.14);padding-left:16px;
+  }
+
+  h1{
+    font-family:"Instrument Serif",Georgia,serif;font-weight:400;
+    font-size:92px;line-height:1.02;letter-spacing:-.022em;
+    max-width:17ch;
+  }
+  h1 em{font-style:italic;color:#D4FF4F;}
+
+  .tags{display:flex;gap:11px;margin-top:32px;}
+  .tags span{
+    font-family:"JetBrains Mono",monospace;font-size:14px;color:#8D8B84;
+    border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:8px 13px;
+    background:rgba(255,255,255,.02);
+    text-decoration:line-through;text-decoration-color:#FF6B5B;text-decoration-thickness:1.6px;
+  }
+
+  .foot{display:flex;align-items:flex-end;justify-content:space-between;}
+  .foot p{font-size:18px;color:#8D8B84;max-width:42ch;line-height:1.45;}
+  .price{
+    display:flex;align-items:baseline;gap:7px;
+    background:#D4FF4F;color:#0B0B0C;border-radius:999px;
+    padding:13px 26px;white-space:nowrap;
+  }
+  .price b{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:1;}
+  .price s{font-size:16px;font-weight:600;text-decoration:none;letter-spacing:-.01em;}
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="rule"></div>
+
+  <div class="pad">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M7.5 25.5c0-10.5 5.4-19 11.2-19 3.1 0 4.8 2 4.8 4.7 0 6.2-7.6 9.6-12.3 10.4" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="25.6" cy="25.4" r="2.5" fill="currentColor"/></svg>
+      <b>Steno</b>
+      <span>instructions + skills</span>
+    </div>
+
+    <div>
+      <h1>Stop sounding like a <em>language model</em>.</h1>
+      <div class="tags">
+        <span>delve into</span>
+        <span>it is important to note</span>
+        <span>— the em dash —</span>
+        <span>a rich tapestry</span>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Paste one block of instructions once. Everything your AI writes after that reads like a person wrote it.</p>
+      <div class="price"><b>₹99</b><s>one time</s></div>
+    </div>
+  </div>
+</body>
+</html>
