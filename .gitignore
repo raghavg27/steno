@@ -1,1 +1,6 @@
 LAUNCH.md
+.DS_Store
+node_modules/
+.env*
+.vercel/
+.playwright-mcp/
