@@ -1,27 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 Disallow: /og.html
 
 # AI assistants send real traffic now. Let them read the guides.
 User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-User
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
+Disallow: /og.html
 
 Sitemap: https://steno-ai.vercel.app/sitemap.xml
