@@ -4,5 +4,8 @@
   "type": "module",
   "dependencies": {
     "@anthropic-ai/sdk": "1.4.0"
+  },
+  "scripts": {
+    "facts": "node scripts/build-llms.mjs"
   }
 }
