@@ -21,7 +21,7 @@
       ]
     },
     {
-      "source": "/article.css",
+      "source": "/(article.css|fonts/fonts.css)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=604800" }
       ]
