@@ -1,10 +1,10 @@
 # Steno
 
-**Stop sounding like a language model.**
+**Teach your AI to write like a human.**
 
-Steno is a writing standard for AI output. It is a paste-once instruction layer plus an editing pass that strips the patterns readers recognise as machine written, without touching a single claim in the text.
+Steno is one writing skill for AI. Paste it into custom instructions once and your AI writes like a person from then on, or run it on text you already have. The landing page has a live demo that runs the real skill on the visitor's own text, with one click checks on QuillBot and GPTZero.
 
-One time payment, ₹99. No app, no login, no subscription.
+One time payment, ₹4,999. Priced for power users on purpose. No app, no login, no subscription.
 
 Live site: **[steno-ai.vercel.app](https://steno-ai.vercel.app)**
 
@@ -40,7 +40,17 @@ Works with ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. I
 
 ## This repository
 
-The Steno landing page. A single static page, no build step, no dependencies, no framework.
+The Steno landing page. A single static page plus one serverless function for the live demo. No build step, no framework.
+
+## Live demo setup (Vercel)
+
+`api/convert.js` runs the skill with the Anthropic API. The skill text is **not** in this repo. Set these in Vercel, Project, Settings, Environment Variables:
+
+- `ANTHROPIC_API_KEY` your Anthropic API key
+- `STENO_SKILL` the full skill text (the same thing buyers get)
+- `STENO_MODEL` optional, defaults to `claude-opus-5-5`
+
+Abuse limits: 2,500 characters per request, 3 free tries per browser, and a per instance cap of 8 requests an hour per IP. For a hard cap across instances, add Vercel KV or Upstash.
 
 - Hand written HTML and CSS with the styles and scripts inline
 - Custom type pairing, ambient gradient and film grain treatment, and a live before and after demo the visitor can toggle
@@ -56,7 +66,7 @@ Built end to end by one person: product, copy, brand, design and front end.
 
 Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock on the page as soon as the payment clears, and a copy goes to your email.
 
-Launch price ₹99, down from ₹499. If it does not work for you, write in and say so. At ₹99 there is no argument worth having about a refund.
+Price ₹4,999, one time. The free demo on the page lets people test it on their own text before paying.
 
 ## Contact
 
