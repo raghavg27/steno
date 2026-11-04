@@ -14,6 +14,7 @@
 - [Twelve tells that give away AI writing](https://steno-ai.vercel.app/ai-writing-tells)
 - [How to make ChatGPT sound human](https://steno-ai.vercel.app/humanize-chatgpt)
 - [The em dash is not the tell any more](https://steno-ai.vercel.app/em-dash-ai-writing)
+- [Steno vs AI humanizer tools, an honest comparison](https://steno-ai.vercel.app/steno-vs-ai-humanizers)
 - [About the maker](https://steno-ai.vercel.app/about)
 - [Changelog](https://steno-ai.vercel.app/changelog)
 - [Privacy](https://steno-ai.vercel.app/privacy), [Terms](https://steno-ai.vercel.app/terms) and [Refunds](https://steno-ai.vercel.app/refunds)
