@@ -40,7 +40,25 @@ Works with ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. I
 
 ## This repository
 
-The Steno landing page. A single static page plus one serverless function for the live demo. No build step, no framework.
+The Steno website. Static HTML pages plus one serverless function for the live demo. No build step, no framework.
+
+- `index.html` is the landing page. Its scripts are in `js/`.
+- The guides, the comparison page and the About, Changelog, Privacy, Terms and Refunds pages use `article.css`.
+- The fonts are in `fonts/`. The site does not load fonts from Google.
+
+## Facts and llms.txt
+
+`facts.json` holds the price and the demo limits. Do not write `llms.txt` by hand. Edit `llms.template.txt` or `facts.json`, then run:
+
+```bash
+npm run facts
+```
+
+The command builds `llms.txt`. It stops with an error if a page shows a price that is different from `facts.json`. Run it before each release.
+
+## Security policy
+
+`vercel.json` sets a strict content security policy. Scripts can load only from this site and from unpkg.com. Do not add inline scripts or `onclick` attributes. Put scripts in `js/` and add event listeners there.
 
 ## Live demo setup (Vercel)
 
@@ -52,13 +70,13 @@ The Steno landing page. A single static page plus one serverless function for th
 
 Abuse limits: 2,500 characters per request, 3 free tries per browser, and a per instance cap of 8 requests an hour per IP. For a hard cap across instances, add Vercel KV or Upstash.
 
-- Hand written HTML and CSS with the styles and scripts inline
+- Hand written HTML and CSS, with the scripts in separate files
 - Custom type pairing, ambient gradient and film grain treatment, and a live before and after demo the visitor can toggle
 - Original logo mark in SVG, rendered out to a full favicon and app icon set
 - Open Graph share card generated from source HTML rather than hand edited in an image tool
-- Three long form guide pages that double as the SEO surface, written in the standard the product sells
+- Three long form guide pages and one honest comparison page that double as the SEO surface, written in the standard the product sells
 - Structured data for Product, FAQ, Article and breadcrumbs, plus a sitemap and crawl rules that admit assistant bots
-- Deployed on Vercel with clean URLs, cache policy and security headers
+- Deployed on Vercel with clean URLs, cache policy, security headers and a strict content security policy
 
 Built end to end by one person: product, copy, brand, design and front end.
 
