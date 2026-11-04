@@ -12,7 +12,7 @@ fs.writeFileSync("llms.txt", out);
 
 const wrong = [];
 for (const file of fs.readdirSync(".").filter((f) => f.endsWith(".html"))) {
-  for (const [price] of fs.readFileSync(file, "utf8").matchAll(/₹\s?[\d,]+/g)) {
+  for (const [price] of fs.readFileSync(file, "utf8").matchAll(/₹\s?\d(?:[\d,]*\d)?/g)) {
     if (price.replace(/\s/g, "") !== facts.price) wrong.push(`${file}: ${price}`);
   }
 }
