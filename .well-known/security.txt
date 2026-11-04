@@ -1,0 +1,4 @@
+Contact: mailto:raghavg2705@gmail.com
+Expires: 2027-11-04T00:00:00Z
+Preferred-Languages: en
+Canonical: https://steno-ai.vercel.app/.well-known/security.txt
