@@ -348,6 +348,9 @@
   .eyebrow{
     font-family:var(--font-raleway);font-weight:500;font-size:12px;letter-spacing:.05em;
     text-transform:uppercase;color:var(--blue);margin-bottom:16px;
+    padding:6px 12px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.72);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   }
   @media(min-width:768px){ .eyebrow{font-size:14px;margin-bottom:24px;} }
   .hero h1{
@@ -362,7 +365,10 @@
   @media(min-width:768px){ .hero h1{font-size:clamp(3.75rem,6.3vw,90px);line-height:1;} }
   .hero-right{max-width:340px;}
   @media(min-width:768px){ .hero-right{width:320px;flex:none;} }
-  .hero-right p{font-family:var(--font-raleway);font-size:15px;font-weight:500;line-height:1.35;color:var(--n950);}
+  .hero-right p{font-family:var(--font-raleway);font-size:15px;font-weight:500;line-height:1.35;color:var(--n950);
+    padding:14px 16px;border-radius:16px;
+    border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.72);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:var(--glass-shadow);}
   .hero-right p strong{font-weight:700;}
   .hero-right .orb-pill{margin-top:22px;}
   .credit{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--n500);margin-top:20px;}
