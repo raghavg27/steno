@@ -241,14 +241,90 @@ function closeM(){
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape"){ closeM(); setDrawer(false); } });
 
-/* ---------- live lab ---------- */
+/* ---------- examples lab ---------- */
 (function lab(){
-  const MAX = 2500, FREE = 3, KEY = "steno-tries";
-  const SAMPLE = `In today's fast-paced digital landscape, remote work has become a crucial part of how modern teams operate. It's worth noting that this shift isn't merely a trend — it's a fundamental transformation in the way we collaborate.
+  // Each "after" is the Steno skill's rewrite of its "before" draft.
+  const SAMPLES = [
+    { name: "Upwork proposal", facts: "6 of 6", factsDesc: "Years, client, result and tools",
+      before: `Hi there,
 
-By leveraging robust tools and fostering a culture of trust, organizations can unlock seamless communication across time zones. Furthermore, remote work empowers employees to achieve a healthier work-life balance, ultimately boosting productivity and engagement.
+I came across your project and I'm thrilled to help bring your vision to life! As a seasoned Shopify developer with over 6 years of experience, I specialize in crafting seamless, user-centric stores that not only look stunning but also drive conversions.
 
-In conclusion, embracing remote work is not only a smart business decision but also a testament to a company's commitment to its people.`;
+In a recent project, I helped a skincare brand boost their checkout completion rate by 18% — a testament to my commitment to delivering real results. I'm well-versed in Liquid, JavaScript and the Shopify API, ensuring a robust, scalable solution tailored to your unique needs.
+
+I'd love to discuss how we can elevate your online store. Let's hop on a quick call to explore the possibilities!
+
+Best regards,
+Arjun`,
+      after: `Hi,
+
+I read your project and I would like to help. I have built Shopify stores for more than 6 years. I focus on stores that are easy to use and that turn visitors into buyers.
+
+In a recent project I helped a skincare brand raise its checkout completion rate by 18%. I work with Liquid, JavaScript and the Shopify API.
+
+Could we have a short call about your store?
+
+Best regards
+Arjun` },
+    { name: "LinkedIn post", facts: "5 of 5", factsDesc: "Years, clients, countries and lessons",
+      before: `🚀 Excited to share a major milestone in my freelance journey!
+
+After 3 years of navigating the ever-evolving landscape of freelance copywriting, I've officially crossed 50 clients across 9 countries. 🌍
+
+This journey has taught me so much:
+✅ Consistency is key
+✅ Relationships matter more than rates
+✅ Never stop learning
+
+I'm deeply grateful to every client who trusted me along the way. Here's to the next chapter! 🙌
+
+#Freelancing #Copywriting #Gratitude`,
+      after: `I have been a freelance copywriter for 3 years, and I have now worked with 50 clients in 9 countries.
+
+I learned to be consistent, I learned that relationships matter more than rates, and I learned to keep learning.
+
+Thank you to every client who trusted me.
+
+#Freelancing #Copywriting #Gratitude` },
+    { name: "Project update", facts: "6 of 6", factsDesc: "Pages, tools, delay and dates",
+      before: `Hi Meera,
+
+I hope you're having a wonderful week! I wanted to take a moment to provide a comprehensive update on the progress of your website redesign.
+
+I'm pleased to report that the homepage and About page are now complete, showcasing a fresh, modern look that truly reflects your brand's unique identity. Furthermore, the contact form has been seamlessly integrated with your Mailchimp account, ensuring that no lead slips through the cracks.
+
+However, it's worth noting that the product gallery will require an additional 4 days due to the fact that we're still awaiting the final product photos from your team.
+
+Rest assured, we remain firmly on track to deliver an exceptional final product by March 28. Please don't hesitate to reach out should you have any questions!
+
+Warm regards,
+Kabir`,
+      after: `Hi Meera
+
+Here is where your website redesign stands.
+
+The homepage and the About page are done with the new design. The contact form now connects to your Mailchimp account, so every enquiry goes there.
+
+The product gallery needs 4 more days because we are still waiting for the final product photos from your team. We still plan to deliver the full site by March 28.
+
+If you have any questions, just reply to this email.
+
+Thanks
+Kabir` },
+    { name: "Portfolio bio", facts: "6 of 6", factsDesc: "Background, years, sectors and result",
+      before: `I'm a passionate UX designer with a keen eye for detail and a deep commitment to crafting intuitive digital experiences that delight users. With a background in psychology and 5+ years in the industry, I bring a unique blend of empathy and strategic thinking to every project.
+
+I've had the privilege of collaborating with startups and established brands alike, from fintech to healthcare. My work on a banking app redesign led to a 40% reduction in support tickets, underscoring the transformative power of thoughtful design.
+
+When I'm not designing, you'll find me exploring local coffee shops or sketching in my notebook. Let's create something amazing together!`,
+      after: `I am a UX designer, and I try to make digital products that are easy to use. I have a background in psychology and 5+ years of work in design.
+
+I have worked with startups and with established brands in fintech and healthcare. My redesign of a banking app cut its support tickets by 40%.
+
+When I am not designing, I visit local coffee shops or sketch in my notebook.
+
+If you have a project in mind, get in touch.` },
+  ];
   // Common giveaways, used only to count before and after for the stats card.
   const TELL_RX = new RegExp([
     "delve\\w*","crucial","robust","seamless\\w*","leverag\\w+","utiliz\\w+","comprehensive","ensur\\w+","furthermore","moreover",
@@ -260,73 +336,24 @@ In conclusion, embracing remote work is not only a smart business decision but a
   const countTells = t => (t.match(TELL_RX) || []).length;
 
   const $ = id => document.getElementById(id);
-  const input = $("labIn"), out = $("labOut"), go = $("labGo"), copyBtn = $("labCopy");
-  const triesEl = $("labTries"), countEl = $("labCount"), wall = $("labWall");
+  const input = $("labIn"), out = $("labOut"), copyBtn = $("labCopy"), picks = $("labPicks");
   const dets = document.querySelectorAll(".js-det");
-  const goLabel = go.innerHTML;
-  let result = "", busy = false;
+  let result = "";
 
-  const getUsed = () => { try { return +localStorage.getItem(KEY) || 0; } catch (e) { return 0; } };
-  const setUsed = n => { try { localStorage.setItem(KEY, String(n)); } catch (e) {} };
-  function renderTries(){
-    const left = Math.max(0, FREE - getUsed());
-    triesEl.textContent = left === 0 ? "No free tries left" : left === 1 ? "1 free try left" : left + " free tries left";
-    wall.classList.toggle("hidden", left > 0);
-    go.disabled = busy || left === 0;
+  function show(i){
+    const s = SAMPLES[i];
+    input.textContent = s.before;
+    out.textContent = s.after;
+    result = s.after;
+    $("labName").textContent = s.name;
+    $("stTells").textContent = countTells(s.before) + " → " + countTells(s.after);
+    $("stFacts").textContent = s.facts;
+    $("stFactsDesc").textContent = s.factsDesc;
+    picks.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-pressed", String(j === i)));
   }
-  function renderCount(){
-    const n = input.value.length;
-    countEl.textContent = n + " / " + MAX;
-    countEl.classList.toggle("over", n > MAX);
-  }
-  function setResult(text){
-    result = text;
-    copyBtn.disabled = !text;
-    dets.forEach(b => b.disabled = !text);
-  }
-  function placeholder(msg, cls){
-    out.innerHTML = "";
-    const span = document.createElement("span");
-    span.className = cls || "ph";
-    span.textContent = msg;
-    out.appendChild(span);
-  }
-
-  input.value = SAMPLE;
-  renderCount(); renderTries();
-  input.addEventListener("input", renderCount);
-  $("labSample").onclick = () => { input.value = SAMPLE; renderCount(); input.focus(); };
-
-  go.onclick = async () => {
-    const text = input.value.trim();
-    if (text.length < 40){ placeholder("Paste a bit more text first. A couple of sentences at least.", "lab-err"); return; }
-    if (text.length > MAX){ placeholder("Keep it under " + MAX + " characters for the demo.", "lab-err"); return; }
-    if (getUsed() >= FREE){ renderTries(); return; }
-
-    busy = true; renderTries(); setResult("");
-    go.innerHTML = 'Rewriting <span class="orb"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg></span>';
-    out.innerHTML = '<div class="shim" aria-label="Rewriting"><i></i><i></i><i></i><i></i><i></i><span>Rewriting like a human</span></div>';
-    const t0 = performance.now();
-    try {
-      const r = await fetch("/api/convert", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text })
-      });
-      const data = await r.json().catch(() => ({}));
-      if (!r.ok || !data.output) throw new Error(data.error || "Something went wrong. Try again.");
-      const secs = (performance.now() - t0) / 1000;
-      out.textContent = data.output;
-      setResult(data.output);
-      setUsed(getUsed() + 1);
-      $("stTells").textContent = countTells(text) + " → " + countTells(data.output);
-      $("stTime").textContent = secs.toFixed(1) + "s";
-    } catch (err){
-      placeholder(err.message || "Something went wrong. Try again.", "lab-err");
-    } finally {
-      busy = false; go.innerHTML = goLabel; renderTries();
-    }
-  };
+  picks.innerHTML = SAMPLES.map((s, i) => `<button type="button" data-i="${i}">${s.name}</button>`).join("");
+  picks.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
+  show(0);
 
   function copyText(text){
     if (navigator.clipboard && window.isSecureContext){

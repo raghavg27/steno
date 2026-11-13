@@ -646,25 +646,19 @@
   .mini:hover{background:#fff;border-color:rgba(14,42,197,.3);}
   .mini:disabled{opacity:.4;cursor:not-allowed;}
   .mini .ic{width:12px;height:12px;}
-  #labIn,.lab-out{
-    display:block;width:100%;flex:1;min-height:300px;max-height:460px;margin:0;padding:20px 22px;border:none;outline:none;resize:vertical;
+  .lab-out{
+    display:block;width:100%;flex:1;min-height:300px;max-height:460px;margin:0;padding:20px 22px;border:none;outline:none;white-space:pre-wrap;
     background:transparent;font-family:var(--font-raleway);font-weight:500;font-size:15.5px;line-height:1.68;color:var(--n950);overflow:auto;
   }
-  #labIn::placeholder{color:var(--n400);}
-  .lab-out{white-space:pre-wrap;resize:none;}
-  @media(max-width:520px){ #labIn,.lab-out{min-height:220px;font-size:15px;padding:16px 18px;} }
-  .lab-out .ph{color:var(--n400);}
+  .lab-out.before{color:var(--n500);}
+  @media(max-width:520px){ .lab-out{min-height:220px;font-size:15px;padding:16px 18px;} }
+  .lab-picks{margin-top:40px;}
+  .lab-picks + .lab{margin-top:20px;}
+  .rtab-row button{font:inherit;border:1px solid rgba(14,42,197,.16);background:rgba(255,255,255,.6);border-radius:999px;padding:9px 16px;cursor:pointer;font-size:14px;color:var(--n700);}
+  .rtab-row button:hover{background:#fff;}
+  .rtab-row button[aria-pressed=true]{background:var(--n950);color:#fff;border-color:transparent;}
   .lab-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-top:1px dashed rgba(14,42,197,.16);}
   .lab-foot .count{font-family:var(--font-mono);font-size:11px;color:var(--n500);}
-  .lab-foot .count.over{color:var(--red);}
-  .tries{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
-  .orb-pill:disabled{opacity:.55;cursor:wait;transform:none;}
-  .shim{display:grid;gap:12px;padding:24px 22px;}
-  .shim i{display:block;height:12px;border-radius:99px;background:linear-gradient(90deg,rgba(14,42,197,.07),rgba(14,42,197,.16),rgba(14,42,197,.07));background-size:200% 100%;animation:shim 1.3s linear infinite;}
-  .shim i:nth-child(2){width:92%;} .shim i:nth-child(3){width:78%;} .shim i:nth-child(5){width:64%;}
-  .shim span{font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-top:6px;}
-  @keyframes shim{from{background-position:200% 0;}to{background-position:-200% 0;}}
-  .lab-err{color:var(--red);}
   .lab-after{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px;}
   @media(min-width:960px){ .lab-after{grid-template-columns:repeat(2,minmax(0,1fr));} }
   .lab-after .stats{margin-top:0;max-width:none;}
@@ -683,11 +677,7 @@
   .det button{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(10,10,10,.12);background:#fff;border-radius:999px;padding:10px 16px;cursor:pointer;
     font-family:var(--font-raleway);font-size:14px;font-weight:600;color:var(--n950);transition:transform .3s var(--ease),box-shadow .3s var(--ease),opacity .3s;}
   .det button:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(14,42,197,.45);}
-  .det button:disabled{opacity:.45;cursor:not-allowed;}
   .det button .ic{width:14px;height:14px;color:var(--blue);}
-  .lab-wall{margin-top:16px;}
-  .lab-wall .gcard-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 22px;background:rgba(255,255,255,.7);}
-  .lab-wall p{font-family:var(--font-raleway);font-weight:500;font-size:16px;color:var(--n950);max-width:34rem;}
   .toast{position:fixed;left:50%;bottom:28px;z-index:95;transform:translate(-50%,20px);opacity:0;pointer-events:none;
     background:var(--n950);color:#fff;border-radius:999px;padding:12px 20px;font-family:var(--font-raleway);font-size:14px;font-weight:600;
     box-shadow:0 14px 34px -14px rgba(14,42,197,.55);transition:opacity .35s var(--ease),transform .35s var(--ease);max-width:calc(100vw - 32px);text-align:center;}
@@ -702,7 +692,6 @@
   .fit .no .ticks li .ic{color:var(--red);}
 
   @media(prefers-reduced-motion:reduce){
-    .shim i{animation:none;}
     .rv,.fu,.hin{transition:none!important;filter:none!important;}
     .track{animation-duration:80s;}
     .scroll-cue{animation:none;}
@@ -904,38 +893,37 @@ Enrolment grew from 12400 in 2024 to 15100 in 2025. That is an increase of about
   </div>
 </section>
 
-<!-- 03 LIVE LAB -->
+<!-- 03 CHECK IT YOURSELF -->
 <section class="sec drop" id="proof">
   <div style="width:100%">
     <div class="lab-head">
-      <span class="label rv">[ 03 / Try it live ]</span>
-      <h2 class="h-sec rv" data-delay=".1">Paste AI text.<br>Get human text back.</h2>
-      <p class="p-sec rv" data-delay=".2">This runs the real skill. Paste anything ChatGPT or Claude wrote for you and press Convert. Then copy the result into QuillBot or GPTZero and <strong>look at the score yourself</strong>. Steno does not save what you paste.</p>
+      <span class="label rv">[ 03 / Check it yourself ]</span>
+      <h2 class="h-sec rv" data-delay=".1">Pick a draft.<br>Check the result.</h2>
+      <p class="p-sec rv" data-delay=".2">Four more drafts that freelancers send every week. Each one is full of AI habits and each one went through the real skill. Pick one. Then copy the human version into QuillBot or GPTZero and <strong>look at the score yourself</strong>.</p>
     </div>
+
+    <div class="rtab-row lab-picks rv" id="labPicks" data-delay=".25" aria-label="Pick a draft"></div>
 
     <div class="lab rv" data-delay=".25">
       <div class="gcard"><div class="gcard-in">
         <div class="lab-bar">
-          <div class="c-head"><span class="idx">IN</span><span class="key">Your AI text</span></div>
-          <button class="mini" id="labSample" type="button">Load a sample</button>
+          <div class="c-head"><span class="idx">BEFORE</span><span class="key">AI draft</span></div>
         </div>
-        <label for="labIn" class="sr">Paste AI written text</label>
-        <textarea id="labIn" spellcheck="false" placeholder="Paste text that ChatGPT or Claude or Gemini wrote for you."></textarea>
+        <div class="lab-out before" id="labIn"></div>
         <div class="lab-foot">
-          <span class="count" id="labCount">0 / 2500</span>
-          <button class="orb-pill" id="labGo" type="button">Convert to human <span class="orb"><svg class="ic" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span></button>
+          <span class="count" id="labName"></span>
         </div>
       </div></div>
 
       <div class="gcard"><div class="gcard-in">
         <div class="lab-bar">
-          <div class="c-head"><span class="bdot"></span><span class="key">Human version</span></div>
-          <button class="mini" id="labCopy" type="button" disabled><svg class="ic" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Copy</button>
+          <div class="c-head"><span class="bdot"></span><span class="key">After Steno</span></div>
+          <button class="mini" id="labCopy" type="button"><svg class="ic" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Copy</button>
         </div>
-        <div class="lab-out" id="labOut" aria-live="polite"><span class="ph">Your converted text shows up here.</span></div>
+        <div class="lab-out" id="labOut" aria-live="polite"></div>
         <div class="lab-foot">
-          <span class="tries" id="labTries">3 free tries</span>
-          <span class="count">Runs the same skill you buy</span>
+          <span class="count">Steno output</span>
+          <span class="count">Same skill you buy</span>
         </div>
       </div></div>
     </div>
@@ -948,9 +936,9 @@ Enrolment grew from 12400 in 2024 to 15100 in 2025. That is an increase of about
           <div class="c-desc">Before and after</div>
         </div></div>
         <div class="gcard"><div class="gcard-in">
-          <div class="c-head"><span class="idx">02</span><span class="key">Time</span><span class="bdot"></span></div>
-          <div class="c-val" id="stTime">…</div>
-          <div class="c-desc">To rewrite it</div>
+          <div class="c-head"><span class="idx">02</span><span class="key">Facts kept</span><span class="bdot"></span></div>
+          <div class="c-val" id="stFacts">…</div>
+          <div class="c-desc" id="stFactsDesc"></div>
         </div></div>
       </div>
 
@@ -959,16 +947,11 @@ Enrolment grew from 12400 in 2024 to 15100 in 2025. That is an increase of about
         <h3>Do not take my word for it.</h3>
         <p>Each button copies the human version for you and opens the detector. Just paste it in and see what it says.</p>
         <div class="det">
-          <button type="button" class="js-det" data-url="https://quillbot.com/ai-content-detector" data-name="QuillBot" disabled>Check on QuillBot <svg class="ic" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></button>
-          <button type="button" class="js-det" data-url="https://gptzero.me/" data-name="GPTZero" disabled>Check on GPTZero <svg class="ic" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></button>
+          <button type="button" class="js-det" data-url="https://quillbot.com/ai-content-detector" data-name="QuillBot">Check on QuillBot <svg class="ic" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></button>
+          <button type="button" class="js-det" data-url="https://gptzero.me/" data-name="GPTZero">Check on GPTZero <svg class="ic" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></button>
         </div>
       </div></div>
     </div>
-
-    <div class="gcard lab-wall hidden" id="labWall"><div class="gcard-in">
-      <p>You have used your free tries. If you liked what you saw then the full skill is yours for ₹4,999 / $56 and you can run it on anything.</p>
-      <button class="orb-pill js-buy">Get Steno for ₹4,999 / $56 <span class="orb"><svg class="ic" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span></button>
-    </div></div>
   </div>
 </section>
 
