@@ -47,6 +47,7 @@ document.addEventListener("mouseleave", () => { mousePos.x = 99; mousePos.y = 99
 
 /* ---------- scroll -> progress + background stage ---------- */
 const bgEl = document.getElementById("bg");
+const stageEl = document.getElementById("stage");
 const hdr = document.getElementById("hdr");
 let bgStage = -1, scrollQueued = false;
 function applyBg(){
@@ -69,6 +70,8 @@ function onScroll(){
   const vh = innerHeight || 1;
   const progress = sceneProgress(vh);
   GRAVITY.control.progress = progress;
+  // the spheres live in the hero only: fade them out as it scrolls away
+  stageEl.style.opacity = Math.max(0, Math.min(1, (0.8 - progress) / 0.5));
   const stage = progress > 1.55 ? 2 : progress > 0.7 ? 1 : 0;
   if (stage !== bgStage){ bgStage = stage; applyBg(); }
   hdr.classList.toggle("scrolled", scrollY > vh * 0.6);
