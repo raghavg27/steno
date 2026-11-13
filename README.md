@@ -2,7 +2,7 @@
 
 **Teach your AI to write like a human.**
 
-Steno is one writing skill for AI. Paste it into custom instructions once and your AI writes like a person from then on, or run it on text you already have. The landing page has a live demo that runs the real skill on the visitor's own text, with one click checks on QuillBot and GPTZero.
+Steno is one writing skill for AI. Paste it into custom instructions once and your AI writes like a person from then on, or run it on text you already have. The landing page shows real before and after examples, with one click checks on QuillBot and GPTZero.
 
 One time payment, ₹4,999 / $56. Built for freelancers and people who write for clients. No app, no login, no subscription.
 
@@ -40,15 +40,16 @@ Works with ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. I
 
 ## This repository
 
-The Steno website. Static HTML pages plus one serverless function for the live demo. No build step, no framework.
+The Steno website. Static HTML pages. No build step, no framework.
 
 - `index.html` is the landing page. Its scripts are in `js/`. The Real results section shows real Steno output from a fresh chat. If you change the examples, use real output only.
+- The Check it yourself section shows four more examples. They are in `js/main.js`, in the `SAMPLES` list. Use real Steno output only.
 - The guides, the comparison page and the About, Changelog, Privacy, Terms and Refunds pages use `article.css`.
 - The fonts are in `fonts/`. The site does not load fonts from Google.
 
 ## Facts and llms.txt
 
-`facts.json` holds the price and the demo limits. Do not write `llms.txt` by hand. Edit `llms.template.txt` or `facts.json`, then run:
+`facts.json` holds the price and other facts about Steno. Do not write `llms.txt` by hand. Edit `llms.template.txt` or `facts.json`, then run:
 
 ```bash
 npm run facts
@@ -60,18 +61,20 @@ The command builds `llms.txt`. It stops with an error if a page shows a price th
 
 `vercel.json` sets a strict content security policy. Scripts can load only from this site and from unpkg.com. Do not add inline scripts or `onclick` attributes. Put scripts in `js/` and add event listeners there.
 
-## Live demo setup (Vercel)
+## Live demo (turned off)
 
-`api/convert.js` runs the skill with the Anthropic API. The skill text is **not** in this repo. Set these in Vercel, Project, Settings, Environment Variables:
+The live demo is off, because each request costs money on the Anthropic API. The site shows fixed examples instead.
+
+`api/convert.js` is still in this repository, but the site does not call it. To turn the live demo on again, put back the trial code in `index.html` and `js/main.js` from before commit 9ca9009. Then set these in Vercel, Project, Settings, Environment Variables. The skill text is **not** in this repo.
 
 - `ANTHROPIC_API_KEY` your Anthropic API key
 - `STENO_SKILL` the full skill text (the same thing buyers get)
 - `STENO_MODEL` optional, defaults to `claude-opus-5-5`
 
-Abuse limits: 2,500 characters per request, 3 free tries per browser, and a per instance cap of 8 requests an hour per IP. For a hard cap across instances, add Vercel KV or Upstash.
+Set a monthly spend limit on the Anthropic key before you turn the demo on. The code has only weak limits: 2,500 characters per request, 3 free tries per browser, and a per instance cap of 8 requests an hour per IP.
 
 - Hand written HTML and CSS, with the scripts in separate files
-- Custom type pairing, ambient gradient and film grain treatment, and a live before and after demo the visitor can toggle
+- Custom type pairing, ambient gradient and film grain treatment, and before and after examples the visitor can switch between
 - Original logo mark in SVG, rendered out to a full favicon and app icon set
 - Open Graph share card generated from source HTML rather than hand edited in an image tool
 - Three long form guide pages and one honest comparison page that double as the SEO surface, written in the standard the product sells
@@ -84,7 +87,7 @@ Built end to end by one person: product, copy, brand, design and front end.
 
 Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock on the page as soon as the payment clears, and a copy goes to your email.
 
-Price ₹4,999 / $56, one time. The free demo on the page lets people test it on their own text before paying.
+Price ₹4,999 / $56, one time. The examples on the page show real results before people pay.
 
 ## Contact
 
