@@ -271,7 +271,7 @@ function createScene(ballColor, onReady){
     }
 
     const progress = ctrl?.progress ?? 0;
-    if (progress >= 0.8) return; // hidden past the hero, so skip the work
+    if (ctrl?.hidden) return; // hidden past the hero, so skip the work
 
     const heroF = 1 - smoothstep(0.30, 0.80, progress);
     const dropRaw = smoothstep(0.40, 0.95, progress);
