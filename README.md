@@ -4,7 +4,7 @@
 
 Steno is one writing skill for AI. Paste it into custom instructions once and your AI writes like a person from then on, or run it on text you already have. The landing page has a live demo that runs the real skill on the visitor's own text, with one click checks on QuillBot and GPTZero.
 
-One time payment, ₹4,999. Priced for power users on purpose. No app, no login, no subscription.
+One time payment, ₹4,999. Built for freelancers and people who write for clients. No app, no login, no subscription.
 
 Live site: **[steno-ai.vercel.app](https://steno-ai.vercel.app)**
 
@@ -22,19 +22,19 @@ Twelve families of tells, each with concrete substitutions rather than vague adv
 
 ## The result
 
-Same information in, fewer words out, nothing invented.
+Same information in, no AI habits out, nothing invented. Steno does not promise shorter text.
 
 > **Before.** In today's rapidly evolving digital landscape, choosing the right project management tool stands as a critical decision for teams of all sizes. It is important to note that the market offers a vast tapestry of options.
 
 > **After.** Picking a project management tool is a real decision, and there are a lot of options.
 
-Across the full sample on the landing page: 11 tells found, 118 words became 51, every claim kept.
+Across the full sample on the landing page: 11 tells found, every claim kept.
 
 ## What you get
 
-**The instruction layer.** A block of instructions that sits in custom instructions, project instructions or a system prompt, so the model writes clean text from the start instead of you fixing it afterwards. Ships in four versions: ChatGPT custom instructions, Claude projects and styles, a short version for character limits, and a per message version for any chat.
+**The instruction layer.** Instructions that sit in custom instructions, project instructions or a system prompt, so the model writes clean text from the start instead of you fixing it afterwards. Ships in four versions: ChatGPT custom instructions, Claude projects and styles, a short version for character limits, and a per message version for any chat.
 
-**The skills file.** The editing pass for text you already have. Follows the Claude Skills format, works as a plain prompt if you do not use skills, keeps every fact, and returns text unchanged when it is already clean.
+**The skills file.** The editing pass for text you already have. Follows the Claude Skills format, works as a plain prompt if you do not use skills, and keeps every fact. It can still make small changes to text that is already clean.
 
 Works with ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. Includes free updates and a commercial licence for client work.
 
@@ -42,7 +42,7 @@ Works with ChatGPT, Claude, Gemini, Copilot, Cursor and most agent frameworks. I
 
 The Steno website. Static HTML pages plus one serverless function for the live demo. No build step, no framework.
 
-- `index.html` is the landing page. Its scripts are in `js/`.
+- `index.html` is the landing page. Its scripts are in `js/`. The Real results section shows real Steno output from a fresh chat. If you change the examples, use real output only.
 - The guides, the comparison page and the About, Changelog, Privacy, Terms and Refunds pages use `article.css`.
 - The fonts are in `fonts/`. The site does not load fonts from Google.
 
