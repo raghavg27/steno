@@ -1,6 +1,6 @@
 # Steno
 
-> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. {{price}} one time. Try it free on your own text at https://steno-ai.vercel.app/#proof
+> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. {{price}} / {{priceUsd}} one time. Try it free on your own text at https://steno-ai.vercel.app/#proof
 
 ## How it works
 
@@ -21,7 +21,7 @@
 
 ## Facts
 
-- Price is {{price}}, paid once. No subscription, no app, no login.
+- Price is {{price}} / {{priceUsd}}, paid once. No subscription, no app, no login.
 - Payment runs through {{paymentProvider}}. Card and UPI both work. The files unlock right after payment and a copy goes to your email.
 - The free demo gives {{freeTries}} tries of up to {{demoMaxChars}} characters each and runs the same skill buyers get.
 - Works with ChatGPT, Claude, Gemini, Copilot, Cursor and any tool that takes custom instructions or a system prompt. Also works as a Claude skill.
