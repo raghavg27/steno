@@ -252,7 +252,6 @@ In conclusion, embracing remote work is not only a smart business decision but a
     "vibrant","holistic","streamlin\\w+","empower\\w*","dive into","navigat\\w+ the","fast[- ]paced","not merely"
   ].map(w => "\\b" + w + "\\b").join("|") + "|[—–]", "gi");
   const countTells = t => (t.match(TELL_RX) || []).length;
-  const countWords = t => (t.trim().match(/\S+/g) || []).length;
 
   const $ = id => document.getElementById(id);
   const input = $("labIn"), out = $("labOut"), go = $("labGo"), copyBtn = $("labCopy");
@@ -315,7 +314,6 @@ In conclusion, embracing remote work is not only a smart business decision but a
       setResult(data.output);
       setUsed(getUsed() + 1);
       $("stTells").textContent = countTells(text) + " → " + countTells(data.output);
-      $("stWords").textContent = countWords(text) + " → " + countWords(data.output);
       $("stTime").textContent = secs.toFixed(1) + "s";
     } catch (err){
       placeholder(err.message || "Something went wrong. Try again.", "lab-err");
