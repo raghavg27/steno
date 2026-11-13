@@ -695,6 +695,28 @@
     .track{animation-duration:80s;}
     .scroll-cue{animation:none;}
   }
+
+  /* Real results */
+  .results{display:flex;align-items:center;padding-top:128px;padding-bottom:128px;}
+  .results .p-sec{margin-top:28px;max-width:36rem;}
+  .rtabs{margin-top:40px;width:100%;}
+  .rtabs > input{position:absolute;opacity:0;pointer-events:none;}
+  .rtab-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .rtab-row label{border:1px solid rgba(14,42,197,.16);background:rgba(255,255,255,.6);border-radius:999px;padding:9px 16px;cursor:pointer;font-size:14px;color:var(--n700);}
+  .rtab-row label:hover{background:#fff;}
+  #rt1:focus-visible ~ .rtab-row label[for=rt1],#rt2:focus-visible ~ .rtab-row label[for=rt2],
+  #rt3:focus-visible ~ .rtab-row label[for=rt3],#rt4:focus-visible ~ .rtab-row label[for=rt4]{outline:2px solid var(--n950);outline-offset:2px;}
+  #rt1:checked ~ .rtab-row label[for=rt1],#rt2:checked ~ .rtab-row label[for=rt2],
+  #rt3:checked ~ .rtab-row label[for=rt3],#rt4:checked ~ .rtab-row label[for=rt4]{background:var(--n950);color:#fff;border-color:transparent;}
+  .rpanel{display:none;}
+  #rt1:checked ~ .rp1,#rt2:checked ~ .rp2,#rt3:checked ~ .rp3,#rt4:checked ~ .rp4{display:block;}
+  .rpanel .lab{margin-top:20px;}
+  .rtext{padding:20px 22px;font-size:16px;line-height:1.65;color:var(--n950);white-space:pre-wrap;flex:1;}
+  .rtext.before{color:var(--n500);}
+  .rtext mark{background:rgba(230,57,70,.12);color:inherit;border-radius:3px;padding:0 2px;}
+  .rpanel .stats{grid-template-columns:repeat(2,minmax(0,1fr));max-width:30rem;margin-top:16px;}
+  @media(max-width:520px){ .rpanel .stats{grid-template-columns:1fr;} .rtext{font-size:15px;padding:16px 18px;} }
+  .rnote{margin-top:14px;font-size:14px;line-height:1.6;color:var(--n500);max-width:40rem;}
 </style>
 <noscript><style>
   #loader{display:none!important;}
@@ -725,6 +747,7 @@
     STENO
   </a>
   <nav class="nav" aria-label="Primary">
+    <a href="#results">Results</a>
     <a href="#proof">Try it</a>
     <a href="#inside">What you get</a>
     <a href="#buy">Price</a>
@@ -763,11 +786,117 @@
   </div>
 </section>
 
-<!-- 02 LIVE LAB -->
+<!-- 02 REAL RESULTS -->
+<section class="sec results" id="results">
+  <div style="width:100%">
+    <div class="lab-head">
+      <span class="label rv">[ 02 / Real results ]</span>
+      <h2 class="h-sec rv" data-delay=".1">Real drafts.<br>Real results.</h2>
+      <p class="p-sec rv" data-delay=".2">Three drafts full of typical AI habits and one clean text. Each one went through Steno in a fresh chat. Read them first, then try it free on your own text below.</p>
+    </div>
+    <div class="rtabs rv" data-delay=".25">
+      <input type="radio" name="rt" id="rt1" aria-label="Client sales email" checked><input type="radio" name="rt" id="rt2" aria-label="Agency brand copy"><input type="radio" name="rt" id="rt3" aria-label="Report paragraph"><input type="radio" name="rt" id="rt4" aria-label="Where it does less">
+      <div class="rtab-row"><label for="rt1">Client sales email</label><label for="rt2">Agency brand copy</label><label for="rt3">Report paragraph</label><label for="rt4">Where it does less</label></div>
+      
+      <div class="rpanel rp1">
+        <div class="lab">
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="idx">BEFORE</span><span class="key">AI draft</span></div></div>
+            <div class="rtext before">Hi Priya,
+
+I hope this email finds you well! <mark>In today's</mark> <mark>fast-paced</mark> business <mark>landscape</mark>, staying ahead of the competition is more <mark>crucial</mark> than ever. That's why I wanted to reach out personally to share how our analytics platform can help your team <mark>unlock</mark> insights, <mark>streamline</mark> reporting, and drive growth.
+
+Our clients typically see a 30% drop in reporting time within the first quarter <mark>—</mark> a <mark>game-changer</mark> for teams like yours.
+
+Would you be open to a quick 15-minute call next Tuesday?</div>
+          </div></div>
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="bdot"></span><span class="key">After Steno</span></div></div>
+            <div class="rtext">Hi Priya
+
+I am writing to you because I think our analytics platform can help your team. It helps you understand your data better and it makes your reports much faster to build. So your team gets more time to spend on growing the business.
+
+Our clients usually cut their reporting time by about 30% in the first three months. I think that could make a real difference for a team like yours.
+
+Would you be open to a quick 15 minute call next Tuesday? I can show you how it works and you can decide if it makes sense for you.
+
+Thanks</div>
+            <div class="lab-foot"><span class="count">Unedited Steno output</span><span class="count">Client sales email</span></div>
+          </div></div>
+        </div>
+        <div class="stats">
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">01</span><span class="key">AI habits</span><span class="bdot"></span></div><div class="c-val">8 → 0</div><div class="c-desc">Before and after</div></div></div>
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">02</span><span class="key">Facts kept</span><span class="bdot"></span></div><div class="c-val">5 of 5</div><div class="c-desc">Names, numbers and dates</div></div></div>
+        </div>
+      </div>
+      <div class="rpanel rp2">
+        <div class="lab">
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="idx">BEFORE</span><span class="key">AI draft</span></div></div>
+            <div class="rtext before"><mark>Elevate</mark> your mornings with Brew &amp; Bloom, where every cup tells a story. Nestled in the heart of Pune, our cafe is more than just a coffee shop <mark>—</mark> it's a community. From ethically sourced beans to handcrafted pastries and warm, inviting spaces, we're redefining what it means to start your day right.</div>
+          </div></div>
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="bdot"></span><span class="key">After Steno</span></div></div>
+            <div class="rtext">I run Brew &amp; Bloom which is a small cafe in the middle of Pune. I want it to be a good place for you to start your morning. And I want it to feel like a community where people know each other and not just a shop where you buy coffee.
+
+I buy our beans from farms that treat their workers and the land fairly. My team bakes the pastries by hand every day. I also tried to make the space warm and comfortable so you feel welcome when you walk in.
+
+So if you want a better way to start your day then come and have a cup with us.</div>
+            <div class="lab-foot"><span class="count">Unedited Steno output</span><span class="count">Agency brand copy</span></div>
+          </div></div>
+        </div>
+        <div class="stats">
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">01</span><span class="key">AI habits</span><span class="bdot"></span></div><div class="c-val">2 → 0</div><div class="c-desc">Before and after</div></div></div>
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">02</span><span class="key">Facts kept</span><span class="bdot"></span></div><div class="c-val">2 of 2</div><div class="c-desc">Names, numbers and dates</div></div></div>
+        </div>
+      </div>
+      <div class="rpanel rp3">
+        <div class="lab">
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="idx">BEFORE</span><span class="key">AI draft</span></div></div>
+            <div class="rtext before">It is important to note that the programme has demonstrated significant progress across multiple key dimensions. Enrolment rose from 12,400 in 2024 to 15,100 in 2025, representing a remarkable 22% increase. <mark>Furthermore</mark>, dropout rates fell to 6.1%, <mark>underscoring</mark> the transformative impact of the new mentoring model.</div>
+          </div></div>
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="bdot"></span><span class="key">After Steno</span></div></div>
+            <div class="rtext">I want to tell you how the programme did because it made good progress in a few areas.
+
+Enrolment grew from 12400 in 2024 to 15100 in 2025. That is an increase of about 22%. And the dropout rate fell to 6.1% which I think shows that the new mentoring model is working.</div>
+            <div class="lab-foot"><span class="count">Steno output</span><span class="count">Report paragraph</span></div>
+          </div></div>
+        </div>
+        <div class="stats">
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">01</span><span class="key">AI habits</span><span class="bdot"></span></div><div class="c-val">2 → 0</div><div class="c-desc">Before and after</div></div></div>
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">02</span><span class="key">Facts kept</span><span class="bdot"></span></div><div class="c-val">6 of 6</div><div class="c-desc">Names, numbers and dates</div></div></div>
+        </div>
+        <p class="rnote">Steno also added a short note about how it wrote the numbers. That note is not shown here.</p>
+      </div>
+      <div class="rpanel rp4">
+        <div class="lab">
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="idx">BEFORE</span><span class="key">AI draft</span></div></div>
+            <div class="rtext before">We moved the team offsite to Lonavala for two days. The first day was mostly planning. On the second day we fixed the release checklist, which had been broken since March.</div>
+          </div></div>
+          <div class="gcard"><div class="gcard-in">
+            <div class="lab-bar"><div class="c-head"><span class="bdot"></span><span class="key">After Steno</span></div></div>
+            <div class="rtext">I took the team to Lonavala for a two day offsite. We spent most of the first day on planning. And on the second day we fixed the release checklist. It broke back in March and stayed broken until then.</div>
+            <div class="lab-foot"><span class="count">Unedited Steno output</span><span class="count">Where it does less</span></div>
+          </div></div>
+        </div>
+        <div class="stats">
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">01</span><span class="key">AI habits</span><span class="bdot"></span></div><div class="c-val">0 → 0</div><div class="c-desc">Before and after</div></div></div>
+          <div class="gcard"><div class="gcard-in"><div class="c-head"><span class="idx">02</span><span class="key">Facts kept</span><span class="bdot"></span></div><div class="c-val">3 of 3</div><div class="c-desc">Names, numbers and dates</div></div></div>
+        </div>
+        <p class="rnote">This text had no AI habits. Steno still rewrote it a little. If your writing already reads well, you may not need Steno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LIVE LAB -->
 <section class="sec drop" id="proof">
   <div style="width:100%">
     <div class="lab-head">
-      <span class="label rv">[ 02 / Try it live ]</span>
+      <span class="label rv">[ 03 / Try it live ]</span>
       <h2 class="h-sec rv" data-delay=".1">Paste AI text.<br>Get human text back.</h2>
       <p class="p-sec rv" data-delay=".2">This runs the real skill. Paste anything ChatGPT or Claude wrote for you and press Convert. Then copy the result into QuillBot or GPTZero and <strong>look at the score yourself</strong>. Steno does not save what you paste.</p>
     </div>
@@ -836,10 +965,10 @@
   </div>
 </section>
 
-<!-- 03 SHAPE / WHAT YOU GET -->
+<!-- 04 SHAPE / WHAT YOU GET -->
 <section class="sec shape" id="inside">
   <div>
-    <span class="label rv">[ 03 / What you get ]</span>
+    <span class="label rv">[ 04 / What you get ]</span>
     <h2 class="h-sec rv" data-delay=".1">One skill.<br>Two ways to use it.</h2>
     <p class="p-sec rv" data-delay=".15">No app and no login and no monthly fee. You get a file that you own and you can use it anywhere you write with AI.</p>
     <div class="rv" data-delay=".28">
@@ -876,10 +1005,10 @@
   </div>
 </section>
 
-<!-- 04 RELEASE / PRICE -->
+<!-- 05 RELEASE / PRICE -->
 <section class="sec release" id="buy">
   <div class="release-in">
-    <span class="label rv">[ 04 / Price ]</span>
+    <span class="label rv">[ 05 / Price ]</span>
     <h2 class="h-big rv" data-delay=".12">Priced high<br>on purpose.</h2>
     <p class="p-sec rv" data-delay=".24">I want this to stay with a small group of serious users. If everyone has the same rules then detectors learn them. So it costs more than a prompt usually does.</p>
 
@@ -902,9 +1031,9 @@
   </div>
 </section>
 
-<!-- 05 WHO IT IS FOR -->
+<!-- 06 WHO IT IS FOR -->
 <section class="sec block" id="who">
-  <span class="label rv">[ 05 / Who it is for ]</span>
+  <span class="label rv">[ 06 / Who it is for ]</span>
   <h2 class="h-sec rv" data-delay=".1">This is not<br>for everyone.</h2>
   <p class="p-sec rv" data-delay=".2">Be honest with yourself before you buy. It is a tool for people who write with AI all the time and need it to sound right.</p>
   <div class="fit">
@@ -931,9 +1060,9 @@
   </div>
 </section>
 
-<!-- 06 SETUP -->
+<!-- 07 SETUP -->
 <section class="sec block" id="setup">
-  <span class="label rv">[ 06 / Setup ]</span>
+  <span class="label rv">[ 07 / Setup ]</span>
   <h2 class="h-sec rv" data-delay=".1">Thirty seconds, once.</h2>
   <div class="steps">
     <div class="gcard rv"><div class="gcard-in">
@@ -957,11 +1086,11 @@
   </div>
 </section>
 
-<!-- 07 FAQ -->
+<!-- 08 FAQ -->
 <section class="sec block" id="faq">
   <div class="faq-grid">
     <div>
-      <span class="label rv">[ 07 / Questions ]</span>
+      <span class="label rv">[ 08 / Questions ]</span>
       <h2 class="h-sec rv" data-delay=".1">Before<br>you buy.</h2>
     </div>
     <div class="gcard solid faq rv" data-delay=".2"><div class="gcard-in">
@@ -997,9 +1126,9 @@
   </div>
 </section>
 
-<!-- 08 GUIDES -->
+<!-- 09 GUIDES -->
 <section class="sec block" id="guides">
-  <span class="label rv">[ 08 / Free reading ]</span>
+  <span class="label rv">[ 09 / Free reading ]</span>
   <h2 class="h-sec rv" data-delay=".1">Read the thinking<br>before you pay for it.</h2>
   <p class="p-sec rv" data-delay=".2">Three guides and no email needed. Read them first if you want to see how I think about AI writing.</p>
   <div class="steps">
