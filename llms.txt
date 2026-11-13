@@ -1,6 +1,6 @@
 # Steno
 
-> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. ₹4,999 / $56 one time. Try it free on your own text at https://steno-ai.vercel.app/#proof
+> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. ₹4,999 / $56 one time. See real examples at https://steno-ai.vercel.app/#proof
 
 ## How it works
 
@@ -10,7 +10,7 @@
 
 ## Key pages
 
-- [Live demo and pricing](https://steno-ai.vercel.app/)
+- [Examples and pricing](https://steno-ai.vercel.app/)
 - [Twelve tells that give away AI writing](https://steno-ai.vercel.app/ai-writing-tells)
 - [How to make ChatGPT sound human](https://steno-ai.vercel.app/humanize-chatgpt)
 - [The em dash is not the tell any more](https://steno-ai.vercel.app/em-dash-ai-writing)
@@ -23,9 +23,8 @@
 
 - Price is ₹4,999 / $56, paid once. No subscription, no app, no login.
 - Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock right after payment and a copy goes to your email.
-- The free demo gives 3 tries of up to 2,500 characters each and runs the same skill buyers get.
 - Works with ChatGPT, Claude, Gemini, Copilot, Cursor and any tool that takes custom instructions or a system prompt. Also works as a Claude skill.
-- There are no refunds, because the files unlock as soon as you pay. Try the free demo first.
+- There are no refunds, because the files unlock as soon as you pay. Read the examples on the site first.
 - Free updates are included, and you can use it for client work.
-- Steno does not promise a score on any AI detector. Detectors change often, so the demo links to QuillBot and GPTZero to check the result yourself.
+- Steno does not promise a score on any AI detector. Detectors change often, so the examples on the site link to QuillBot and GPTZero to check the results yourself.
 - Made by Raghav Gupta. Contact raghavg2705@gmail.com
