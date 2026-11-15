@@ -1,4 +1,5 @@
 // Builds llms.txt from facts.json, then checks that every page shows the same price.
+// The changelog is not checked, because it keeps the old prices as history.
 // Run: npm run facts
 import fs from "node:fs";
 
@@ -11,11 +12,11 @@ const out = template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
 fs.writeFileSync("llms.txt", out);
 
 const wrong = [];
-for (const file of fs.readdirSync(".").filter((f) => f.endsWith(".html"))) {
+for (const file of fs.readdirSync(".").filter((f) => f.endsWith(".html") && f !== "changelog.html")) {
   for (const [price] of fs.readFileSync(file, "utf8").matchAll(/₹\s?\d(?:[\d,]*\d)?/g)) {
     if (price.replace(/\s/g, "") !== facts.price) wrong.push(`${file}: ${price}`);
   }
-  // Steno's dollar price always follows a slash, as in "₹4,999 / $56"
+  // Steno's dollar price always follows a slash, as in "₹1,249 / $14"
   for (const [price] of fs.readFileSync(file, "utf8").matchAll(/\/\s?\$\d+(?:\.\d+)?/g)) {
     if (price.replace(/[\s/]/g, "") !== facts.priceUsd) wrong.push(`${file}: ${price}`);
   }

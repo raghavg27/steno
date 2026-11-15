@@ -1,6 +1,6 @@
 # Steno
 
-> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. ₹4,999 / $56 one time. See real examples at https://steno-ai.vercel.app/#proof
+> Steno is a writing skill that teaches ChatGPT, Claude and Gemini to write like a person. Paste it into custom instructions once, or run it on text you already have. ₹1,249 / $14 one time. See real examples at https://steno-ai.vercel.app/#proof
 
 ## How it works
 
@@ -21,7 +21,7 @@
 
 ## Facts
 
-- Price is ₹4,999 / $56, paid once. No subscription, no app, no login.
+- Price is ₹1,249 / $14, paid once. No subscription, no app, no login.
 - Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock right after payment and a copy goes to your email.
 - Works with ChatGPT, Claude, Gemini, Copilot, Cursor and any tool that takes custom instructions or a system prompt. Also works as a Claude skill.
 - There are no refunds, because the files unlock as soon as you pay. Read the examples on the site first.

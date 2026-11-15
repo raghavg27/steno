@@ -4,7 +4,7 @@
 
 Steno is one writing skill for AI. Paste it into custom instructions once and your AI writes like a person from then on, or run it on text you already have. The landing page shows real before and after examples, with one click checks on QuillBot and GPTZero.
 
-One time payment, ₹4,999 / $56. Built for freelancers and people who write for clients. No app, no login, no subscription.
+One time payment, ₹1,249 / $14. Built for freelancers and people who write for clients. No app, no login, no subscription.
 
 Live site: **[steno-ai.vercel.app](https://steno-ai.vercel.app)**
 
@@ -87,7 +87,7 @@ Built end to end by one person: product, copy, brand, design and front end.
 
 Payment runs through Buy Me a Coffee. Card and UPI both work. The files unlock on the page as soon as the payment clears, and a copy goes to your email.
 
-Price ₹4,999 / $56, one time. The examples on the page show real results before people pay.
+Price ₹1,249 / $14, one time. The examples on the page show real results before people pay.
 
 ## Contact
 
