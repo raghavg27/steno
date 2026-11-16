@@ -38,10 +38,18 @@ const client = new Anthropic();
 
 function rateLimited(ip) {
   const now = Date.now();
+  // Drop clients whose last counted request is older than the window.
+  for (const [key, times] of hits) {
+    if (now - times[times.length - 1] >= WINDOW_MS) hits.delete(key);
+  }
   const list = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+  if (list.length >= MAX_PER_WINDOW) {
+    hits.set(ip, list);
+    return true;
+  }
   list.push(now);
   hits.set(ip, list);
-  return list.length > MAX_PER_WINDOW;
+  return false;
 }
 
 function systemPrompt(skill) {
