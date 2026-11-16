@@ -44,6 +44,10 @@ addEventListener("pointermove", e => {
 addEventListener("mousedown", () => mousePos.isDown = true);
 addEventListener("mouseup",   () => mousePos.isDown = false);
 document.addEventListener("mouseleave", () => { mousePos.x = 99; mousePos.y = 99; });
+// A finger does not hover: when it lifts, the pointer is gone.
+const pointerGone = e => { if (e.pointerType !== "mouse"){ mousePos.x = 99; mousePos.y = 99; } };
+addEventListener("pointerup", pointerGone);
+addEventListener("pointercancel", pointerGone);
 
 /* ---------- scroll -> progress + background stage ---------- */
 const bgEl = document.getElementById("bg");
