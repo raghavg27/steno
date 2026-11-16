@@ -86,14 +86,27 @@ onScroll();
 
 /* ---------- smooth wheel scroll (Lenis-style, lerp 0.09) ---------- */
 let scrollLocked = false;
-const smooth = { target: scrollY, current: scrollY, active: false };
+const smooth = { target: scrollY, current: scrollY, active: false, running: false };
 const maxScroll = () => Math.max(0, document.documentElement.scrollHeight - innerHeight);
 const clampS = v => Math.min(maxScroll(), Math.max(0, v));
+// The loop runs only during a glide, and stops one frame after the glide ends.
+function smoothTick(){
+  if (!smooth.active){ smooth.running = false; return; }
+  smooth.target = clampS(smooth.target);
+  smooth.current += (smooth.target - smooth.current) * 0.09;
+  if (Math.abs(smooth.target - smooth.current) < 0.5){ smooth.current = smooth.target; smooth.active = false; }
+  scrollTo(0, smooth.current);
+  requestAnimationFrame(smoothTick);
+}
+function smoothStart(){
+  smooth.active = true;
+  if (!smooth.running){ smooth.running = true; requestAnimationFrame(smoothTick); }
+}
 function smoothTo(y){
   if (reduceMotion){ scrollTo(0, y); return; }
   if (!smooth.active){ smooth.current = scrollY; }
   smooth.target = clampS(y);
-  smooth.active = true;
+  smoothStart();
 }
 if (!reduceMotion){
   addEventListener("wheel", e => {
@@ -109,18 +122,9 @@ if (!reduceMotion){
     if (e.deltaMode === 1) d *= 16; else if (e.deltaMode === 2) d *= innerHeight;
     if (!smooth.active){ smooth.target = smooth.current = scrollY; }
     smooth.target = clampS(smooth.target + d * 1); // wheelMultiplier = 1
-    smooth.active = true;
+    smoothStart();
   }, { passive: false });
   addEventListener("scroll", () => { if (!smooth.active){ smooth.target = smooth.current = scrollY; } }, { passive: true });
-  (function tick(){
-    if (smooth.active){
-      smooth.target = clampS(smooth.target);
-      smooth.current += (smooth.target - smooth.current) * 0.09;
-      if (Math.abs(smooth.target - smooth.current) < 0.5){ smooth.current = smooth.target; smooth.active = false; }
-      scrollTo(0, smooth.current);
-    }
-    requestAnimationFrame(tick);
-  })();
   addEventListener("keydown", e => { if (["ArrowUp","ArrowDown","PageUp","PageDown","Home","End"," "].includes(e.key)) smooth.active = false; });
   addEventListener("touchstart", () => { smooth.active = false; }, { passive: true });
 }
